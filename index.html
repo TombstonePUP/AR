@@ -8,13 +8,15 @@
     <a-scene embedded arjs>
       <!-- Marker (Hiro preset) -->
       <a-marker preset="hiro">
-        <!-- 3D Model Placeholder -->
-        <a-box position="0 0.5 0" material="color: blue;"></a-box>
-        <!-- Replace the box with your custom content -->
-        <!-- Example for image: <a-image src="path/to/your-image.jpg" width="1" height="1"></a-image> -->
-        <!-- Example for 3D model: <a-entity gltf-model="path/to/your-model.glb" position="0 0 0" scale="0.5 0.5 0.5"></a-entity> -->
+        <!-- Custom Image Content -->
+        <a-image src="BINI-GWEN.png" width="1" height="1" position="0 0 0"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+    <div>
+      <h2>Hiro Marker</h2>
+      <p>Print or display the marker below for testing:</p>
+      <img src="pattern-marker.png" alt="Hiro Marker" style="width:300px;height:300px;">
+    </div>
   </body>
 </html>

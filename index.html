@@ -1,32 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Test AR #2</title>
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.1.7/aframe/build/aframe-ar.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillUp AR Experience</title>
+  <link rel="icon" href="skp-icon.png" type="image/png">
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      max-width: 600px;
+      width: 100%;
+    }
+    h1 {
+      color: #333;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background-color: #0056b3;
+      color: white;
+      font-size: 18px;
+      padding: 12px 24px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #003d80;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
-<body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam; smooth: true; smoothCount: 100; smoothTolerance: 0.05; smoothThreshold: 1;">
-
-    <!-- Marker for tracking -->
-    <a-marker type="pattern" url="pattern-hiro.patt">
-      <!-- Plane to display the image -->
-
-      <a-plane id="imagePlane" scale="1 1.4 1 position="0 0 0" rotation="-90 0 0"  material="shader: flat; src:Piyesa-poster.png"></a-plane>
-      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="0 0 1"></a-entity> 
-
-      <!-- <a-plane scale="1 1.5 1 position="0 2 0" rotation="-90 0 0"  material="shader: flat; src:Piyesa-poster.png"></a-plane> -->
-      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="2 0 1"></a-entity> 
-
-      <!-- <a-plane scale="1 1.5 1 position="0 2 0" rotation="-90 0 0"  material="shader: flat; src:Piyesa-poster.png"></a-plane> -->
-      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="-2 0 1"></a-entity> 
-     
-    </a-marker>
-    <!-- Camera to view the scene -->
-    <a-entity camera></a-entity>
-  </a-scene>
+<body>
+  <div class="container">
+    <h1>Welcome to SkillUp's AR Experience</h1>
+    <p>Explore our augmented reality content and discover more about our projects.</p>
+    <a href="ar-exp.html" class="btn">Start AR Experience</a>
+  </div>
 </body>
 </html>
-
-
-

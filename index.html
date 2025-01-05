@@ -1,153 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AR Poster Example</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
+<html>
+<head>
+  <title>Test AR #2</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.1.7/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs="sourceType: webcam; smooth: true; smoothCount: 100; smoothTolerance: 0.05; smoothThreshold: 1;">
 
-      a-scene {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-  </head>
+    <!-- Marker for tracking -->
+    <a-marker type="pattern" url="pattern-hiro.patt">
+      <!-- Plane to display the image -->
 
-  <body>
-    <a-scene embedded arjs>
-      <!-- Marker-based AR trackers -->
-      <a-marker preset="custom" type="pattern" url="pattern-Group 1.patt">
-        <a-image
-          src="poster.jpg"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-        ></a-image>
-      </a-marker>
+      <a-plane id="imagePlane" scale="1 1.4 1 position="0 0 0" rotation="-90 0 0"  material="shader: flat; src:Piyesa-poster.png"></a-plane>
+      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="0 0 1"></a-entity> 
 
-      <a-marker preset="custom" type="pattern" url="pattern-Group 2.patt">
-        <a-image
-          src="poster.jpg"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-        ></a-image>
-      </a-marker>
+      <!-- <a-plane scale="1 1.5 1 position="0 2 0" rotation="-90 0 0"  material="shader: flat; src:Piyesa-poster.png"></a-plane> -->
+      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="2 0 1"></a-entity> 
 
-      <a-marker preset="custom" type="pattern" url="pattern-Group 3.patt">
-        <a-image
-          src="poster.jpg"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-        ></a-image>
-      </a-marker>
-
-      <a-marker preset="custom" type="pattern" url="pattern-Group 4.patt">
-        <a-image
-          src="poster.jpg"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-        ></a-image>
-      </a-marker>
-
-      <a-marker preset="custom" type="pattern" url="pattern-Group 5.patt">
-        <a-image
-          src="poster.jpg"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-        ></a-image>
-      </a-marker>
-
-      <a-marker preset="custom" type="pattern" url="pattern-Group 6.patt">
-        <a-image
-          src="poster.jpg"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-        ></a-image>
-      </a-marker>
-
-      <a-marker preset="custom" type="pattern" url="pattern-Group 7.patt">
-        <a-image
-          src="poster.jpg"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-        ></a-image>
-      </a-marker>
-
-      <!-- Marker 9: Poster for 3 seconds, then video -->
-      <a-marker
-        preset="custom"
-        type="pattern"
-        url="pattern-Group 9.patt"
-        id="marker-9"
-      >
-        <a-image
-          id="marker-9-poster"
-          src="poster.jpg"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-        ></a-image>
-        <!-- <a-video
-          id="marker-9-video"
-          src="PiYESA - 2025.mp4"
-          position="0 0 0"
-          rotation="-90 0 0"
-          width="1"
-          height="1.5"
-          crossorigin="anonymous"
-          visible="false"
-        ></a-video> -->
-      </a-marker>
-
-      <!-- Optional: Static content for non-AR environment -->
-      <a-entity camera></a-entity>
-    </a-scene>
-
-    <!-- <script>
-      const marker9 = document.querySelector("#marker-9");
-      const poster = document.querySelector("#marker-9-poster");
-      const video = document.querySelector("#marker-9-video");
-
-      // Listen for when the marker is visible
-      marker9.addEventListener("markerFound", () => {
-        // Show poster for 3 seconds
-        poster.setAttribute("visible", "true");
-        video.setAttribute("visible", "false");
-
-        setTimeout(() => {
-          // After 3 seconds, hide the poster and show the video
-          poster.setAttribute("visible", "false");
-          video.setAttribute("visible", "true");
-          video.play(); // Start playing the video
-        }, 3000);
-      });
-
-      // Pause the video when the marker is lost
-      marker9.addEventListener("markerLost", () => {
-        video.pause();
-      });
-    </script> -->
-  </body>
+      <!-- <a-plane scale="1 1.5 1 position="0 2 0" rotation="-90 0 0"  material="shader: flat; src:Piyesa-poster.png"></a-plane> -->
+      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="-2 0 1"></a-entity> 
+     
+    </a-marker>
+    <!-- Camera to view the scene -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
 </html>
+
+
+

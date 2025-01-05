@@ -40,21 +40,21 @@
   <!-- Overlay Message -->
   <div id="overlay">Landscape mode recommended for a better experience</div>
 
-  <a-scene embedded antialias="true" stats="false"
+  <a-scene embedded antialias="false" stats="false"
     arjs="sourceType: webcam; smooth: true; smoothCount: 100; smoothTolerance: 0.05; smoothThreshold: 1; debugUIEnabled: false;">
 
     <!-- Marker for tracking -->
     <a-marker type="pattern" url="PATTS/pattern-G1.patt">
       <!-- Plane to display the image -->
       <!-- Middle -->
-      <a-plane id="imagePlane1" scale="1 1.4 1" position="0 0 0" rotation="-90 0 0"
+      <a-plane id="imagePlane" scale="1 1.4 1" position="0 0 0" rotation="-90 0 0"
         material="shader: flat; src:POSTERS/PIYESA-Poster.png"></a-plane>
-      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="0 0 1"></a-entity>
+      <a-entity gltf-model="3D/FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="0 0 1"></a-entity>
 
       <!-- Left -->
-      <a-plane id="imagePlane2" scale="1 1.4 1" position="2 0 0" rotation="-90 0 0"
+      <a-plane id="imagePlane1" scale="1 1.4 1" position="2 0 0" rotation="-90 0 0"
         material="shader: flat; src:POSTERS/BN-Poster.jpg"></a-plane>
-      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="2 0 1"></a-entity>
+      <a-entity gltf-model="3D/FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="2 0 1"></a-entity>
     </a-marker>
 
     <a-marker type="pattern" url="PATTS/pattern-G2.patt">
@@ -63,17 +63,17 @@
       <!-- Left -->
       <a-plane id="imagePlane2" scale="1 1.4 1" position="-2 0 0" rotation="-90 0 0"
         material="shader: flat; src:POSTERS/PIYESA-Poster.png"></a-plane>
-      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="-2 0 1"></a-entity>
+      <a-entity gltf-model="3D/FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="-2 0 1"></a-entity>
 
       <!-- Middle -->
       <a-plane id="imagePlane" scale="1 1.4 1" position="0 0 0" rotation="-90 0 0"
         material="shader: flat; src:POSTERS/BN-Poster.jpg"></a-plane>
-      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="0 0 1"></a-entity>
+      <a-entity gltf-model="3D/FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="0 0 1"></a-entity>
 
       <!-- Right -->
       <a-plane id="imagePlane1" scale="1 1.4 1" position="2 0 0" rotation="-90 0 0"
         material="shader: flat; src:POSTERS/-Poster.png"></a-plane>
-      <a-entity gltf-model="FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="2 0 1"></a-entity>
+      <a-entity gltf-model="3D/FILM-FRAME.glb" scale="0.3 0.3 0.3" rotation="-90 0 0" position="2 0 1"></a-entity>
     </a-marker>
 
     <!-- Camera to view the scene -->
